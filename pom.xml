@@ -9,11 +9,11 @@
         <relativePath/>
     </parent>
 
-    <groupId>io.github.talelin</groupId>
-    <artifactId>latticy</artifactId>
-    <version>0.2.0-RC2</version>
-    <name>latticy</name>
-    <description>Demo project for lin cms</description>
+    <groupId>io.github.Nightstars</groupId>
+    <artifactId>smartapi</artifactId>
+    <version>0.2.1</version>
+    <name>smartapi</name>
+    <description>API project for smartcms</description>
 
     <properties>
         <argLine>-Dfile.encoding=UTF-8</argLine>
