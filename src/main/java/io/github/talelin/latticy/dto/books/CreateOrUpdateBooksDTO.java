@@ -7,18 +7,18 @@ import javax.validation.constraints.Size;
 
 @Data
 public class CreateOrUpdateBooksDTO {
-    @NotEmpty(message = "必须传入图书名")
-    @Size(max = 50, message = "图书名不能超过50字符")
+    @NotEmpty(message = "{books.title.no-empty}")
+    @Size(max = 50, message = "{books.title.max-size}")
     private String title;
 
-    @NotEmpty(message = "必须传入图书作者")
-    @Size(max = 50, message = "图书作者名不能超过30字符")
+    @NotEmpty(message = "{books.author.no-empty}")
+    @Size(max = 50, message = "{books.author.max-size}")
     private String author;
 
-    @NotEmpty(message = "必须传入图书综述")
-    @Size(max = 1000, message = "图书综述不能超过1000字符")
+    @NotEmpty(message = "{books.summary.no-empty}")
+    @Size(max = 1000, message = "{books.summary.max-size}")
     private String summary;
 
-    @Size(max = 100, message = "图书插图的url长度必须在0~100之间")
+    @Size(max = 100, message = "{books.image.max-length}")
     private String image;
 }

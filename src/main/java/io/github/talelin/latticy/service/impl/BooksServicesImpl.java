@@ -35,4 +35,9 @@ public class BooksServicesImpl implements BooksServices {
     public List<BooksDO> getAllBooks() {
         return booksMapper.selectList(null);
     }
+
+    @Override
+    public boolean deleteById(Long id) {
+        return booksMapper.deleteById(id)>0;
+    }
 }

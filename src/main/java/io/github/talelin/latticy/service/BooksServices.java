@@ -10,4 +10,5 @@ public interface BooksServices {
     BooksDO getById(Long id);
     boolean createBook(CreateOrUpdateBooksDTO createOrUpdateBooksDTO);
     List<BooksDO> getAllBooks();
+    boolean deleteById(Long id);
 }
