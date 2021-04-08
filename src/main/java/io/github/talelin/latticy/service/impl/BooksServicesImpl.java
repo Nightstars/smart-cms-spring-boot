@@ -40,4 +40,13 @@ public class BooksServicesImpl implements BooksServices {
     public boolean deleteById(Long id) {
         return booksMapper.deleteById(id)>0;
     }
+
+    @Override
+    public boolean updateBook(BooksDO booksDO,CreateOrUpdateBooksDTO model) {
+        booksDO.setAuthor(model.getAuthor());
+        booksDO.setTitle(model.getTitle());
+        booksDO.setImage(model.getImage());
+        booksDO.setSummary(model.getSummary());
+        return booksMapper.updateById(booksDO)>0;
+    }
 }

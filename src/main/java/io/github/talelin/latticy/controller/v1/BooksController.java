@@ -8,6 +8,7 @@ import io.github.talelin.latticy.model.BooksDO;
 import io.github.talelin.latticy.service.BooksServices;
 import io.github.talelin.latticy.vo.CreatedVO;
 import io.github.talelin.latticy.vo.DeletedVO;
+import io.github.talelin.latticy.vo.UpdatedVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -47,11 +48,23 @@ public class BooksController {
     @DeleteMapping("/{id}")
     @GroupMeta(permission = "删除书籍",module ="书籍" ,mount = true)
     @GroupRequired
-    public DeletedVO deleteBook(@PathVariable("id") @Positive(message = "{id}") Long id){
+    public DeletedVO deleteBook(@PathVariable("id") @Positive(message = "{id.positive}") Long id){
         BooksDO booksDO=booksServices.getById(id);
         if(null==booksDO)
-            throw new NotFoundException("book not found",10210);
+            throw new NotFoundException(10210);
         boolean rs=booksServices.deleteById(booksDO.getId());
         return new DeletedVO(10213);
+    }
+
+    @PutMapping("/{id}")
+    @GroupRequired
+    @GroupMeta(permission = "修改书籍",module = "书籍",mount = true)
+    public UpdatedVO updateBook(@PathVariable("id") @Positive(message ="{id.positive}" ) Long id, @RequestBody CreateOrUpdateBooksDTO model){
+        BooksDO booksDO=booksServices.getById(id);
+        if(booksDO==null){
+            throw new NotFoundException(10210);
+        }
+        boolean rs=booksServices.updateBook(booksDO,model);
+        return new UpdatedVO(10214);
     }
 }

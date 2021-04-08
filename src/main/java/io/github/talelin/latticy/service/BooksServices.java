@@ -11,4 +11,5 @@ public interface BooksServices {
     boolean createBook(CreateOrUpdateBooksDTO createOrUpdateBooksDTO);
     List<BooksDO> getAllBooks();
     boolean deleteById(Long id);
+    boolean updateBook(BooksDO booksDO, CreateOrUpdateBooksDTO model);
 }
