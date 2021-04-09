@@ -37,7 +37,8 @@ public class BooksController {
         boolean flag=booksServices.createBook(createOrUpdateBooksDTO);
         return new CreatedVO(10212);
     }
-    @GetMapping("/getall")
+
+    @GetMapping("")
     public List<BooksDO> getAllBools(){
         List<BooksDO> booksDOList=booksServices.getAllBooks();
         if(booksDOList.size()<1)
