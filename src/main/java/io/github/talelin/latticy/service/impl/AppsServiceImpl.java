@@ -28,4 +28,23 @@ public class AppsServiceImpl implements AppsService {
         appsDO.setSummary(validator.getSummary());
         return appsMapper.insert(appsDO)>0;
     }
+
+    @Override
+    public AppsDO getById(Long id) {
+        return appsMapper.selectById(id);
+    }
+
+    @Override
+    public boolean deleteById(Long id) {
+        return appsMapper.deleteById(id)>0;
+    }
+
+    @Override
+    public boolean updateById(AppsDO appsDO, CreateOrUpdateAppsDTO createOrUpdateAppsDTO) {
+        appsDO.setName(createOrUpdateAppsDTO.getName());
+        appsDO.setUrl(createOrUpdateAppsDTO.getUrl());
+        appsDO.setIcon(createOrUpdateAppsDTO.getIcon());
+        appsDO.setSummary(createOrUpdateAppsDTO.getSummary());
+        return appsMapper.updateById(appsDO)>0;
+    }
 }

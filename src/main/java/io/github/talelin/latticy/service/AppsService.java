@@ -10,4 +10,9 @@ public interface AppsService {
 
     boolean createApp(CreateOrUpdateAppsDTO validator);
 
+    AppsDO getById(Long id);
+
+    boolean deleteById(Long id);
+
+    boolean updateById(AppsDO appsDO,CreateOrUpdateAppsDTO createOrUpdateAppsDTO);
 }
