@@ -11,7 +11,7 @@ spring:
     username: "root"
     password: "Ihavenoidea@0"
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://cloudapps.life:3306/smart-cms?useSSL=false&serverTimezone=UTC&characterEncoding=UTF8
+    url: jdbc:mysql://192.168.0.50:3306/smart-cms?useSSL=false&serverTimezone=UTC&characterEncoding=UTF8
 
 
 # 开启权限拦截
